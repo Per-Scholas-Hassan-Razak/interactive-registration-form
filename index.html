@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Interactive Registration Form</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Register</h1>
+      <form id="registrationForm" novalidate>
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            required
+            pattern="^[a-zA-Z0-9]+$"
+            maxlength="20"
+          />
+          <span class="error-message" id="usernameError"></span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <span class="error-message" id="emailError"></span>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            required
+            minlength="8"
+            maxlength="15"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\S).{8,15}$"
+          />
+          <span class="error-message" id="passwordError"></span>
+          <div id="passwordRequirements" class="requirements-row">
+            <div id="lengthReq" class="requirement-box">8-15 chars</div>
+            <div id="uppercaseReq" class="requirement-box">Uppercase</div>
+            <div id="lowercaseReq" class="requirement-box">Lowercase</div>
+            <div id="numberReq" class="requirement-box">Number</div>
+            <div id="specialReq" class="requirement-box">Special</div>
+            <div id="noSpaceReq" class="requirement-box">No spaces</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password:</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            required
+            minlength="8"
+            maxlength="15"
+          />
+          <span class="error-message" id="confirmPasswordError"></span>
+        </div>
+        <button id="submit" type="submit">Register</button>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
